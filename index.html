@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Rusydah Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 2rem;
+            border-radius: 8px;
+            max-width: 400px;
+            width: 100%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="login-container">
+    <h3 class="mb-4">Rusydah Nafilah Cantiek</h3>
+    <form onsubmit="return validateLogin()">
+        <div class="mb-3">
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" placeholder="Enter your username" required>
+        </div>
+        <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+        </div>
+        <button type="submit" class="btn btn-success w-100">Pencet ini berarti kamu sayang aku :P</button>
+    </form>
+
+    <div class="mt-4">
+        <p>Lupa password?</p>
+        <p>Apabila Anda lupa atau tidak mengetahui password akun Anda, silahkan hubungi kami di:</p>
+        <ul class="list-unstyled">
+            <li>Telepon: 0857-8098-0074</li>
+            <li>E-mail: miftahulhabaib@gmail.com</li>
+            <li><a href="#" class="text-decoration-none">Chat via WhatsApp</a></li>
+        </ul>
+    </div>
+</div>
+
+<script>
+    function validateLogin() {
+        const correctUsername = "Rusydah Nafilah";
+        const correctPassword = "12345";
+
+        const enteredUsername = document.getElementById("username").value;
+        const enteredPassword = document.getElementById("password").value;
+
+        if (enteredUsername === correctUsername && enteredPassword === correctPassword) {
+            alert("Login successful!");
+            window.location.href = "dashboard.html";  // Redirect to dashboard.html upon successful login
+            return false;  // Prevent form submission to avoid reloading the page
+        } else {
+            alert("Incorrect username or password, please try again.");
+            return false;  // Prevent form submission
+        }
+    }
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
